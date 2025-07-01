@@ -13,9 +13,7 @@ clean:
 	rm -f $(OBJS) $(BUILD)/*
 
 $(BUILD)/%.o: %.S
-	$(CC) $(CFLAGS) -c $< -o $@
-
-$(BUILD)/%.o: %.S
+	mkdir --parents $(BUILD)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(BUILD)/$(TARGET): $(OBJS)
